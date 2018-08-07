@@ -30,6 +30,7 @@ const BlogContent = styled.div`
 `;
 export default ({ data }) => {
   const post = data.markdownRemark;
+  console.log(location.pathname);
   return (
     <div>
       <Img sizes={post.frontmatter.featuredImage.childImageSharp.sizes} />
