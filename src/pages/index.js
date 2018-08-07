@@ -29,6 +29,7 @@ const Intro = styled.p`
 `;
 
 const Card = styled.div`
+  font-family: "Brandon Grotesque Regular";
   background: #fff;
   box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.08);
   padding: 1rem 1.5rem;
@@ -71,6 +72,9 @@ export default ({ data }) => (
           </StyledLink>
         );
       })}
+      <p style={{ textAlign: "center", marginTop: "40px" }}>
+        Made With ❤️ by Pratik Chakravorty
+      </p>
     </ContentContainer>
   </div>
 );

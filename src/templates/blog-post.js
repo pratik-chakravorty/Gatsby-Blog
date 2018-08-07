@@ -16,10 +16,12 @@ const ContentContainer = styled.div`
   }
 `;
 const PostTitle = styled.h1`
+  color: #141414;
   font-family: "Brandon Grotesque";
 `;
 
 const BlogContent = styled.div`
+  font-family: "Brandon Grotesque Regular";
   font-size: 1.4rem;
   line-height: 2rem;
   @media (max-width: 640px) {

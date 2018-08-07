@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Brandon Grotesque";
+  src: url("../../public/static/Brandon_med.otf");
+}
+
+@font-face {
+  font-family: "Brandon Grotesque Regular";
+  src: url("../../public/static/Brandon_reg.otf");
+}
