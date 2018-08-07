@@ -35,6 +35,7 @@ const BlogContent = styled.div`
   font-family: "Brandon Grotesque Regular";
   font-size: 1.4rem;
   line-height: 2rem;
+  text-align: center;
   @media (max-width: 640px) {
     font-size: 1.2rem;
   }
@@ -60,8 +61,9 @@ export default () => (
     <BlogContent>
       Hi, my name is Pratik Chakravorty and I am a full-stack developer
       currently living in Cork, Ireland. I love to experiment and build things.
-      When I am not coding I enjoy watching anime and playing video games. React
-      is my go to Javascript library of choice.
+      When I am not coding I enjoy watching anime and playing video games. My
+      current stack is React in the front-end, Redux as my state management
+      library and Express with MongoDB in the backend.
     </BlogContent>
     <Grid>
       <SocialLink href="https://medium.com/@pratikch1253" target="_blank">

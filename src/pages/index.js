@@ -23,8 +23,8 @@ const Intro = styled.p`
     font-size: 1.8rem;
   }
   @media (max-width: 480px) {
-    font-size: 1.6rem;
-    line-height: 30px;
+    font-size: 2rem;
+    line-height: 50px;
   }
 `;
 
@@ -55,7 +55,7 @@ const PostTitle = styled.h1`
 export default ({ data }) => (
   <div>
     <ContentContainer>
-      <Intro>Hi, My name is Pratik Chakravorty and this is my Blog.</Intro>
+      <Intro>Hi, My name is Pratik and welcome to my blog.</Intro>
       {data.allMarkdownRemark.edges.map(({ node }, index) => {
         return (
           <StyledLink to={node.fields.slug} key={index}>
@@ -73,7 +73,7 @@ export default ({ data }) => (
         );
       })}
       <p style={{ textAlign: "center", marginTop: "40px" }}>
-        Made With ❤️ by Pratik Chakravorty
+        Made With ❤️ using Gatsby
       </p>
     </ContentContainer>
   </div>

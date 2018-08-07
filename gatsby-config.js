@@ -21,6 +21,12 @@ module.exports = {
               inlineCodeMarker: null,
               aliases: []
             }
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 740
+            }
           }
         ]
       }

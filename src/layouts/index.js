@@ -11,6 +11,10 @@ injectGlobal`
      margin:0;
      background:#FBFAFC;
      font-family:'Brandon Grotesque';
+ } 
+ a {
+   background-image:none;
+   text-decoration:none;
  }
 `;
 
