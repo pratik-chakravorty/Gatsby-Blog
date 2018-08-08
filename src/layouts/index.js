@@ -16,6 +16,9 @@ injectGlobal`
    background-image:none;
    text-decoration:none;
  }
+ .button {
+  cursor:pointer;
+ }
 `;
 
 const Container = styled.div`
