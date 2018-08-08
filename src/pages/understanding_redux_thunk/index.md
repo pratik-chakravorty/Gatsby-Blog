@@ -535,4 +535,4 @@ Now I know all of this is overkill to create such a basic application. We could 
 
 Now that you have an understanding of Redux Thunk improve this application even further use `React Router` and create a separate page use some other API's like Reddit's API and fetch some data and show it in a nice clean user interface. Maybe learn how you can cache these requests. As you can see we can easily expand this application to more complex territories if we desire.
 
-Thanks for reading this long article and I will be back with another one.su
+Thanks for reading this long article and I will be back with another one.
