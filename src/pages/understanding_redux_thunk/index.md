@@ -152,7 +152,6 @@ export const receive_post = post => {
 };
 
 export const receive_error = () => {
-  console.log("called");
   return {
     type: "RECEIVE_ERROR"
   };
