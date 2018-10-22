@@ -100,7 +100,8 @@ Now that we have the store lets write the reducer for this application. Go back 
 ```javascript
 const initialState = {
   userData: {},
-  isFetching: false
+  isFetching: false,
+  isError: false
 };
 
 const asyncReducer = (state = initialState, action) => {

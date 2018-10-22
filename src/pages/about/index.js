@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Layout from "../../components/layout";
 import "@fortawesome/fontawesome-free/css/all.css";
 const ContentContainer = styled.div`
   margin: 3rem auto;
@@ -33,8 +34,8 @@ const Intro = styled.h1`
 
 const BlogContent = styled.div`
   font-family: "Brandon Grotesque Regular";
-  font-size: 1.4rem;
-  line-height: 2rem;
+  font-size: 2rem;
+  line-height: 3rem;
   text-align: center;
   @media (max-width: 640px) {
     font-size: 1.2rem;
@@ -56,25 +57,30 @@ const SocialLink = styled.a`
 `;
 
 export default () => (
-  <ContentContainer>
-    <Intro>About</Intro>
-    <BlogContent>
-      Hi, my name is Pratik Chakravorty and I am a full-stack developer
-      currently living in Cork, Ireland. I love to experiment and build things.
-      When I am not coding I enjoy watching anime and playing video games. My
-      current stack is React in the front-end, Redux as my state management
-      library and Express with MongoDB in the backend.
-    </BlogContent>
-    <Grid>
-      <SocialLink href="https://medium.com/@pratikch1253" target="_blank">
-        <i className="fab fa-medium-m fa-2x" />
-      </SocialLink>
-      <SocialLink href="https://twitter.com/pratzc07" target="_blank">
-        <i className="fab fa-twitter fa-2x" />
-      </SocialLink>
-      <SocialLink href="https://github.com/pratik-chakravorty" target="_blank">
-        <i className="fab fa-github fa-2x" />
-      </SocialLink>
-    </Grid>
-  </ContentContainer>
+  <Layout>
+    <ContentContainer>
+      <Intro>About</Intro>
+      <BlogContent>
+        Hi, my name is Pratik Chakravorty and I am a full-stack developer
+        currently living in Cork, Ireland. I love to experiment and build
+        things. When I am not coding I enjoy watching anime and playing video
+        games. My current stack is React in the front-end, Redux as my state
+        management library and Express with MongoDB in the backend.
+      </BlogContent>
+      <Grid>
+        <SocialLink href="https://medium.com/@pratikch1253" target="_blank">
+          <i className="fab fa-medium-m fa-2x" />
+        </SocialLink>
+        <SocialLink href="https://twitter.com/pratzc07" target="_blank">
+          <i className="fab fa-twitter fa-2x" />
+        </SocialLink>
+        <SocialLink
+          href="https://github.com/pratik-chakravorty"
+          target="_blank"
+        >
+          <i className="fab fa-github fa-2x" />
+        </SocialLink>
+      </Grid>
+    </ContentContainer>
+  </Layout>
 );

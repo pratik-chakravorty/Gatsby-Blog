@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "Brandon Grotesque";
+  src: url("./Brandon_med.otf");
+}
+
+@font-face {
+  font-family: "Brandon Grotesque Regular";
+  src: url("./Brandon_reg.otf");
+}
+
+body {
+  margin: 0;
+  background: #fbfafc;
+  font-family: "Brandon Grotesque";
+}
+a {
+  background-image: none;
+  text-decoration: none;
+}
+.button {
+  cursor: pointer;
+}

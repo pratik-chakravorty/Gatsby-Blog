@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import Img from "gatsby-image";
+import Layout from "../components/layout";
+import { graphql } from "gatsby";
+import Disqus from "disqus-react";
 
 import {
   TwitterShareButton,
@@ -38,47 +41,58 @@ const PostTitle = styled.h1`
 
 const BlogContent = styled.div`
   font-family: "Brandon Grotesque Regular";
-  font-size: 1.4rem;
-  line-height: 2rem;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
   @media (max-width: 640px) {
     font-size: 1.2rem;
   }
 `;
 export default ({ data, location }) => {
   const hostname = `pratiks-blog.netlify.com`;
-  const post = data.markdownRemark;
   const shareUrl = "https://" + hostname + location.pathname;
+  const post = data.markdownRemark;
+  const disqusShortname = "pratiks-blog-netlify-com";
+  const disqusConfig = {
+    identifier: `${location.pathname}`,
+    title: post.frontmatter.title
+  };
   return (
-    <div>
-      <Img sizes={post.frontmatter.featuredImage.childImageSharp.sizes} />
-      <ContentContainer>
-        <PostTitle>{post.frontmatter.title}</PostTitle>
-        <BlogContent dangerouslySetInnerHTML={{ __html: post.html }} />
-        <SocialShare>
-          <TwitterShareButton
-            url={shareUrl}
-            title={post.frontmatter.title}
-            className="button"
-          >
-            <TwitterIcon size={50} round={true} />
-          </TwitterShareButton>
-          <LinkedinShareButton
-            url={shareUrl}
-            title={post.frontmatter.title}
-            className="button"
-          >
-            <LinkedinIcon size={50} round={true} />
-          </LinkedinShareButton>
-          <FacebookShareButton
-            url={shareUrl}
-            title={post.frontmatter.title}
-            className="button"
-          >
-            <FacebookIcon size={50} round={true} />
-          </FacebookShareButton>
-        </SocialShare>
-      </ContentContainer>
-    </div>
+    <Layout>
+      <div>
+        <Img sizes={post.frontmatter.featuredImage.childImageSharp.sizes} />
+        <ContentContainer>
+          <PostTitle>{post.frontmatter.title}</PostTitle>
+          <BlogContent dangerouslySetInnerHTML={{ __html: post.html }} />
+          <SocialShare>
+            <TwitterShareButton
+              url={shareUrl}
+              title={post.frontmatter.title}
+              className="button"
+            >
+              <TwitterIcon size={50} round={true} />
+            </TwitterShareButton>
+            <LinkedinShareButton
+              url={shareUrl}
+              title={post.frontmatter.title}
+              className="button"
+            >
+              <LinkedinIcon size={50} round={true} />
+            </LinkedinShareButton>
+            <FacebookShareButton
+              url={shareUrl}
+              title={post.frontmatter.title}
+              className="button"
+            >
+              <FacebookIcon size={50} round={true} />
+            </FacebookShareButton>
+          </SocialShare>
+          <Disqus.DiscussionEmbed
+            shortname={disqusShortname}
+            config={disqusConfig}
+          />
+        </ContentContainer>
+      </div>
+    </Layout>
   );
 };
 

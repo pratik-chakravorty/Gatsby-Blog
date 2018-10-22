@@ -4,8 +4,8 @@ const { createFilePath } = require("gatsby-source-filesystem");
 const path = require("path");
 
 //Gatsby API that creates a node. We use it to create a slug.
-exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
-  const { createNodeField } = boundActionCreators;
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions;
   if (node.internal.type === "MarkdownRemark") {
     //we need the names of each of the md files and create slugs
     //for example if we have example-post.md as a file we need to make /example-post
@@ -18,8 +18,8 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   }
 };
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators;
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
   return new Promise((resolve, reject) => {
     graphql(
       `

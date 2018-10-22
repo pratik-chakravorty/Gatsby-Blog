@@ -1,25 +1,10 @@
 import React from "react";
-import styled, { injectGlobal } from "styled-components";
+import styled from "styled-components";
 import Link from "gatsby-link";
 import Transition from "./transition";
 
-require("prismjs/themes/prism-solarizedlight.css");
-import "./font.css";
-
-injectGlobal`
- body {
-     margin:0;
-     background:#FBFAFC;
-     font-family:'Brandon Grotesque';
- } 
- a {
-   background-image:none;
-   text-decoration:none;
- }
- .button {
-  cursor:pointer;
- }
-`;
+import "prismjs/themes/prism-solarizedlight.css";
+import "./layout.css";
 
 const Container = styled.div`
   margin: 0 auto;
@@ -42,17 +27,17 @@ const Navigation = styled.div`
 
 const LogoLink = styled(Link)`
   font-family: "Brandon Grotesque";
-  background-image:none;
+  background-image: none;
   font-size: 2rem;
   color: #141414;
   margin-top: 5px;
   border: 2px solid #141414;
-  padding: 5px
-  border-radius:4px;
+  padding: 5px;
+  border-radius: 4px;
   margin-right: auto;
   &:hover {
-    color:#663399;
-    border-color:#663399
+    color: #663399;
+    border-color: #663399;
   }
   @media (max-width: 600px) {
     margin: 20px auto;
@@ -60,6 +45,7 @@ const LogoLink = styled(Link)`
 `;
 
 const StyledLink = styled(Link)`
+  font-size: 1.7rem;
   color: #9d7cbf;
   background: none;
   text-shadow: none;
@@ -89,6 +75,6 @@ export default ({ children }) => (
       <StyledLink to="/">Home</StyledLink>
       <StyledLink to="/about">About</StyledLink>
     </Container>
-    <Transition>{children()}</Transition>
+    <Transition>{children}</Transition>
   </div>
 );

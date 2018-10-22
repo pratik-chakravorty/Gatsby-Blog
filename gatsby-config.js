@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Pratik's Blog`
+    title: `Pratik's Blog`,
+    description: `My personal blogs about the things that I learn.`
   },
   plugins: [
     `gatsby-plugin-styled-components`,
@@ -8,6 +9,24 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`
+      }
+    },
+    {
+      resolve: `gatsby-plugin-favicon`,
+      options: {
+        logo: "./src/logo-2.png",
+        icons: {
+          android: true,
+          appleIcon: true,
+          appleStartup: true,
+          coast: false,
+          favicons: true,
+          firefox: true,
+          opengraph: false,
+          twitter: false,
+          yandex: false,
+          windows: false
+        }
       }
     },
     {

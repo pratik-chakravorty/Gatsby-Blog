@@ -1,7 +1,9 @@
 import React from "react";
-import styled, { injectGlobal } from "styled-components";
+import styled from "styled-components";
 import Link from "gatsby-link";
 import Img from "gatsby-image";
+import Layout from "../components/layout";
+import { graphql } from "gatsby";
 
 const ContentContainer = styled.div`
   margin: 3rem auto;
@@ -31,6 +33,7 @@ const Intro = styled.p`
 const Card = styled.div`
   font-family: "Brandon Grotesque Regular";
   background: #fff;
+  font-size: 1.2rem;
   box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.08);
   padding: 1rem 1.5rem;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -53,30 +56,36 @@ const PostTitle = styled.h1`
   font-family: "Brandon Grotesque";
 `;
 export default ({ data }) => (
-  <div>
-    <ContentContainer>
-      <Intro>Hi, My name is Pratik and welcome to my blog.</Intro>
-      {data.allMarkdownRemark.edges.map(({ node }, index) => {
-        return (
-          <StyledLink to={node.fields.slug} key={index}>
-            <Card>
-              <Img
-                sizes={node.frontmatter.featuredImage.childImageSharp.sizes}
-              />
-              <PostTitle>{node.frontmatter.title} </PostTitle>
-              <p>{node.excerpt}</p>
-              <span style={{ color: "#666666", fontSize: "15px" }}>
-                Pratik Chakravorty on {node.frontmatter.date}
-              </span>
-            </Card>
-          </StyledLink>
-        );
-      })}
-      <p style={{ textAlign: "center", marginTop: "40px" }}>
-        Made With ❤️ using Gatsby
-      </p>
-    </ContentContainer>
-  </div>
+  <Layout>
+    <div>
+      <ContentContainer>
+        <Intro>Hi, My name is Pratik and welcome to my blog.</Intro>
+        {data.allMarkdownRemark.edges.map(({ node }, index) => {
+          return (
+            <StyledLink to={node.fields.slug} key={index}>
+              <Card>
+                <Img
+                  sizes={node.frontmatter.featuredImage.childImageSharp.sizes}
+                />
+                <PostTitle>{node.frontmatter.title} </PostTitle>
+                <p>{node.excerpt}</p>
+                <span style={{ color: "#666666", fontSize: "15px" }}>
+                  Pratik Chakravorty on {node.frontmatter.date}
+                </span>
+              </Card>
+            </StyledLink>
+          );
+        })}
+        <p style={{ textAlign: "center", marginTop: "40px" }}>
+          Made With{" "}
+          <span role="img" aria-label="heart">
+            ❤️
+          </span>{" "}
+          using Gatsby
+        </p>
+      </ContentContainer>
+    </div>
+  </Layout>
 );
 
 export const query = graphql`
