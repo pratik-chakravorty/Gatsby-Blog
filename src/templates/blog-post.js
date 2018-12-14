@@ -45,6 +45,7 @@ const BlogContent = styled.div`
   line-height: 2.5rem;
   @media (max-width: 640px) {
     font-size: 1.2rem;
+    line-height: 1.9rem;
   }
 `;
 export default ({ data, location }) => {

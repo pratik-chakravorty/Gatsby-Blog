@@ -1,9 +1,15 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import Link from "gatsby-link";
 import Img from "gatsby-image";
 import Layout from "../components/layout";
 import { graphql } from "gatsby";
+
+const GlobalStyle = createGlobalStyle`
+ html {
+   font-family:"Brandon Grotesque"
+ }
+`;
 
 const ContentContainer = styled.div`
   margin: 3rem auto;
@@ -57,6 +63,7 @@ const PostTitle = styled.h1`
 `;
 export default ({ data }) => (
   <Layout>
+    <GlobalStyle />
     <div>
       <ContentContainer>
         <Intro>Hi, My name is Pratik and welcome to my blog.</Intro>
